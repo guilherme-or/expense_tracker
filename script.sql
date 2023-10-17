@@ -53,3 +53,12 @@ VALUES
     ('Vendas', 0, 61216, 4283215696);
 
 
+create table orcamentos(
+  id bigint generated always as identity primary key,
+  user_id text not null, 
+  categoria_id bigint references categorias (id),
+  descricao text not null,
+  valor_limite numeric not null,
+  data_criado date not null,
+  ativo boolean default true
+);
