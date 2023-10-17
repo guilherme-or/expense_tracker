@@ -1,18 +1,29 @@
-import 'package:expense_tracker_fiap/models/tipo_transacao.dart';
+import 'package:expense_tracker/models/tipo_transacao.dart';
 import 'package:flutter/material.dart';
+import 'package:ionicons/ionicons.dart';
 
 class Categoria {
-  String id;
-  String nome;
+  int id;
+  String descricao;
+  Color cor = Colors.red;
   IconData icone;
-  Color cor;
   TipoTransacao tipoTransacao;
 
   Categoria({
     required this.id,
-    required this.nome,
-    required this.icone,
+    required this.descricao,
     required this.cor,
+    required this.icone,
     required this.tipoTransacao,
   });
+
+  factory Categoria.fromMap(Map<String, dynamic> map) {
+    return Categoria(
+      id: map['id'],
+      descricao: map['descricao'],
+      cor: Color(map['cor']),
+      icone: IoniconsData(map['icone']),
+      tipoTransacao: TipoTransacao.values[map['tipo_transacao']],
+    );
+  }
 }

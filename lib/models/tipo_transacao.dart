@@ -1,4 +1,1 @@
-enum TipoTransacao {
-  receita,
-  despesa
-}
+enum TipoTransacao { receita, despesa }
