@@ -59,6 +59,6 @@ create table orcamentos(
   categoria_id bigint references categorias (id),
   descricao text not null,
   valor_limite numeric not null,
-  data_criado date not null,
+  data_criado date not null default now(),
   ativo boolean default true
 );

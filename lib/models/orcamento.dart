@@ -5,7 +5,7 @@ class Orcamento {
   String userId;
   String descricao;
   double valorLimite;
-  DateTime dataCriado;
+  DateTime? dataCriado;
   Categoria categoria;
 
   Orcamento({
@@ -13,7 +13,7 @@ class Orcamento {
     required this.userId,
     required this.descricao,
     required this.valorLimite,
-    required this.dataCriado,
+    this.dataCriado,
     required this.categoria,
   });
 
@@ -22,8 +22,8 @@ class Orcamento {
       id: map['id'],
       userId: map['user_id'],
       descricao: map['descricao'],
-      valorLimite: map['valor'],
-      dataCriado: DateTime.parse(map['data_transacao']),
+      valorLimite: map['valor_limite'],
+      dataCriado: DateTime.parse(map['data_criado']),
       categoria: Categoria.fromMap(map['categorias']),
     );
   }

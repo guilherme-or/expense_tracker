@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 import '../models/categoria.dart';
 
 class CategoriesSelectPage extends StatefulWidget {
-  final TipoTransacao tipoTransacao;
+  final TipoTransacao? tipoTransacao;
 
-  const CategoriesSelectPage({super.key, required this.tipoTransacao});
+  const CategoriesSelectPage({super.key, this.tipoTransacao});
 
   @override
   State<CategoriesSelectPage> createState() => _CategoriesSelectPageState();
